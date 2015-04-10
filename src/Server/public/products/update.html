@@ -1,0 +1,22 @@
+<div>	
+		
+		<div class="admin-site">
+			<a href="./#/">til forsiden</a>
+			<form>
+				<label for="name">Product Name:</label>
+				<input type="text" name="name" id="name" ng-model="product.name" />
+
+				<label for="price">Price:</label>
+				<input type="text" name="price" id="price" ng-model="product.price" />
+
+				<label for="category">Category:</label>
+				<input type="text" name="category" id="category" ng-model="product.category" />
+
+				<label for="image">Image:</label>
+				<input type="text" name="img" id="image" ng-model="product.img" />
+
+				<button class="btn btn-default confirm" type="submit" ng-click="updateProduct(product._id)">Update Product</button>
+				<button class="btn btn-default confirm" type="submit" ng-click="deleteProduct(product._id)">Delete</button>
+			</form>
+		</div>
+	</div>

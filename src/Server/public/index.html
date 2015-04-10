@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="Main">
+
+  <head>
+    <meta charset="utf-8" />
+    <link data-require="bootstrap@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <!-- <script data-require="bootstrap@*" data-semver="3.3.1" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+    <link href="style/shop.css" rel="stylesheet" type="text/css" />
+    <!--<script data-require="angular.js@*" data-semver="1.4.0-beta.2" src="https://code.angularjs.org/1.4.0-beta.2/angular.js"></script> -->
+    <title>Milkshop</title>
+  </head>
+
+  <body>
+
+
+
+    <h1 class="center"> Welcome to the most awesome milkshop </h1>
+      
+    <div ng-controller="cartController" class="well center">
+        <h3>Cart</h3>
+        <table class="table table-bordered table-stripped">
+        <tr class="colWidth">
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price Per Item</th>
+        <tr>
+        <tr ng-repeat="cartProduct in cartProducts">
+          <td>{{cartProduct.product.name}}</td>
+          <td>{{cartProduct.quantity}}</td>
+          <td>{{cartProduct.product.price}}</td>
+          <td><button ng-click="delProd(cartProduct)" class="btn"> slet </button></td>
+        </tr>
+        <tr>
+            <td> <a ng-href="#/checkout/"> To checkout </a> </td>
+        </tr>
+      </table>
+    </div>
+
+    <div ng-view class="center">
+
+    </div>
+    
+    <a href="./#/admin">til admin del</a>
+    
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.min.js"></script>
+    <script src="app.module.js"></script>
+    
+    <script src="cart/cart.service.js"></script>
+    <script src="products/products.service.js"></script>
+
+    <script src="cart/cart.controller.js"></script>
+    <script src="products/admin.controller.js"></script>
+    <script src="products/adminEdit.controller.js"></script>
+    <script src="products/products.controller.js"></script>
+    <script src="products/product.controller.js"></script>
+  </body>
+
+</html>           

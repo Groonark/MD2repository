@@ -1,0 +1,25 @@
+.center
+{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.shopPicture
+{
+	width: 30%;
+	height: auto;
+
+}
+
+.sortBtn
+{
+	list-style-type: none;
+	padding: 10px 0px 10px 0px !important;
+}
+
+.sortBtn li
+{
+	display:inline;
+
+}
+

@@ -1,0 +1,51 @@
+<div>
+	<h1>Admin Panel</h1>
+	
+	<div ng-controller="adminController">	
+		
+		<div>
+			<a href="./#/">til forsiden</a>
+			<form>
+
+				<label for="name">Product Name:</label>
+				<input type="text" id="name" ng-model="product.name" />
+
+				<label for="price">Price:</label>
+				<input type="text" id="price" ng-model="product.price" />
+
+				<label for="category">Category:</label>
+				<input type="text" id="category" ng-model="product.category" />
+
+				<label for="image">Image:</label>
+				<input type="text" id="image" ng-model="product.img" />
+
+				<button class="btn btn-default confirm" type="submit" ng-click="createProduct(product)">Create Product</button>	
+			</form>
+		</div>
+	</div>
+	<div>
+		<table <table class="table table-bordered table-stripped">
+	        <tr ng-repeat="product in products | filter: productName | filter:categoryFilter">
+	          
+	          <td>
+	              <img class="shopPicture" src="{{ product.img }}">
+	              
+	          </td>
+	          
+	          <td> 
+	              {{ product.price }} kr
+	          </td>
+
+	          <td>
+	              <a ng-href="#/product/{{product.id}}"> {{product.name}} </a>
+	          </td>
+	         <td>
+	              <a href="/#/updateAdmin/{{product._id}}" class="btn btn-default">Edit/Delete</a>
+	              
+	          </td>
+	        </tr>
+	        
+	     </table>
+
+  	</div>
+</div>

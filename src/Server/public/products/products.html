@@ -1,0 +1,43 @@
+
+    
+    <div class="well" >
+      <h3>Products</h3>
+
+      <h1>A nice milkshop :)</h1>
+        <a href="./#/admin">til admin del</a>
+        <h2>{{ error }}</h2>
+        <input type="search" placeholder="Search product name" ng-model="productName" />
+        <ul class="sortBtn">
+          <li ng-repeat="cat in categories" >
+            <input type="checkbox" ng-click="categoryChange(cat.category)" />
+            {{ cat.category }}
+          </li>
+        </ul>
+
+      
+      <table <table class="table table-bordered table-stripped">
+        <tr ng-repeat="product in products | filter: productName | filter:categoryFilter">
+          
+          <td>
+              <img class="shopPicture" src="{{ product.img }}">
+              
+          </td>
+          
+          <td> 
+              {{ product.price }} kr
+          </td>
+
+          <td>
+              <a ng-href="#/product/{{product.id}}"> {{product.name}} </a>
+          </td>
+          <td>
+            <form ng-submit="addToCart(product)">
+            <input type="number" ng-model="quantity" />
+            <button type="submit"> Add to cart </button>
+          </form>
+          </td>
+        
+        </tr>
+        
+      </table>
+    </div>

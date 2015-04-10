@@ -1,0 +1,39 @@
+
+
+<div  ng-controller="cartController" class="well">
+			<form role="form">
+				<div class="form-group row">
+					<div class="col-md-5">
+						<label for="fornavn">Fornavn:</label>
+						<input type="text" ng-model="order.fornavn" class="form-control" id="fornavn" />
+					</div>
+					<div class="col-md-7">
+						<label for="efternavn">Efternavn:</label>
+						<input type="text" ng-model="order.efternavn" class="form-control" id="efternavn" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="adr">Adresse:</label>
+					<input type="text" ng-model="order.adresse" class="form-control" id="adr" />
+				</div>
+				<div class="form-group row">
+					<div class="col-md-3">
+						<label for="postnr">Postnr:</label>
+						<input type="number" ng-model="order.postnr" class="form-control" id="postnr" />
+					</div>
+					<div class="col-md-9">
+						<label for="by">By:</label>
+						<input type="text" ng-model="order.by" class="form-control" id="by" />
+					</div>
+				
+				</div>
+				<div class="form-group">
+					<label for="email">Emailadresse:</label>
+					<input type="email" ng-model="order.email" class="form-control" id="email" />
+				</div>
+				<button type="submit" ng-click="check(order)" class="btn btn-default">Bestil</button>
+				<a ng-href="#/" class="btn btn-default"> Back to store </a>
+			</form>
+
+
+</div>
